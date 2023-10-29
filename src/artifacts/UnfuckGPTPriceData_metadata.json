@@ -1,0 +1,366 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "currentPriceInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "ftsoIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "decimals",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					}
+				],
+				"name": "latestPriceForToken",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "ftsoIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "decimals",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IFtsoRegistry.PriceInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "priceInfosCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refreshPrices",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/UnfuckGPTPriceData.sol": "UnfuckGPTPriceData"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@flarenetwork/flare-periphery-contracts/=lib/flare-foundry-periphery-package/src/",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/",
+			":openzeppelin-contracts/=lib/openzeppelin-contracts/",
+			":wormhole-solidity-sdk/=lib/wormhole-solidity-sdk/src/"
+		]
+	},
+	"sources": {
+		"lib/flare-foundry-periphery-package/src/coston2/ftso/ftso/interface/IIFtso.sol": {
+			"keccak256": "0xd245b3c083496b3539224dc707381db5a5e8a49a5012d370b34514caefa3415d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8bfe225cca2e036b4c9e460e9fd7c3f568e9574d879f81c038309563987e2348",
+				"dweb:/ipfs/QmUeLdoDMG7eyQSHzaHqXwVpEYB4Nd3FpvoDjpXckDs1dq"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/ftso/genesis/interface/IFtsoGenesis.sol": {
+			"keccak256": "0xd015bc43b8a22afaba50c42a56409df0d81172845dabc124a3d37b3b0bbd4df5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bc305f048820c05956ec05fa246ec9070f9d813b43935356e7fe35969f49fc02",
+				"dweb:/ipfs/QmaUJ42ZFzcRgy6GQtstkXMk9UgL5ERZx2V9HueXApgWBW"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/ftso/genesis/interface/IFtsoRegistryGenesis.sol": {
+			"keccak256": "0x4765fdcb22dcc64c015d02c019f0ddce8d8b36111160fd4160a3d94ea4f370a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0baa5b9b24e3049bcf8de78d5dbdb778d53f5585fbe479550bfdcef2ed676257",
+				"dweb:/ipfs/Qmd8Eby81zX1YptGo5E2zAraTFo2NGLRCL9XuyU7YSsaqG"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/ftso/userInterfaces/IFtso.sol": {
+			"keccak256": "0xfae54442fb489dccc5f0a0a6f8d946c9fdebceece98fcb087c5998fa1363ff30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://53d8b87f403e7d868ed832f8cb965a440c8c32d20699a07f0a3f7bb2abeff2b5",
+				"dweb:/ipfs/QmTYEoSzDJyhiJyY2AhnirXD6F737mzSVbqbnr6g4Fa7kT"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/ftso/userInterfaces/IFtsoRegistry.sol": {
+			"keccak256": "0x2b818c0cd8f2f1be88da36edd966d2b358c6954e50e0aa653a9d65ef2e9712d7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://07258af95b9556c024aaab2e2ff83955c56f255f82a024ed190f19947087682d",
+				"dweb:/ipfs/QmeRKq6cYMau8VdLkEJw3xE6eK19Hz5DvzLEzUk1ZnVJxh"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/governance/userInterfaces/IGovernanceVotePower.sol": {
+			"keccak256": "0xac45cb04eedb4f19533df4867eb6cd50874a55ef04d73f4d2dc3d3b7d3927e3c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://12c190c019723041417c6f06c932a0719b837023d4fb42090d4bb6f820331132",
+				"dweb:/ipfs/QmfAsGCz2FgYvearhCHLqJHkd4MMiSpZ8JkUUY5hNBU2oA"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/infrastructure/userInterfaces/IPChainStakeMirror.sol": {
+			"keccak256": "0x8c70a1ae9079bb9d29c8e2dde781f546b6cb621f0b7cc943b9cbcbd52718bb41",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b4e89abe97c65481a1cacb59abcde6d18b127a89ed46f99402c30c6477ea0722",
+				"dweb:/ipfs/Qmd6i71hUPHR11U1U8EvDwJyEg4xUZhLbDe7D4Z7LLrAZx"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/infrastructure/userInterfaces/IPChainStakeMirrorVerifier.sol": {
+			"keccak256": "0x1a1d0a1302b59249f9d2ca2700bb9759bc66bae73fe1c920cf4c20ac75b475fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7155abcad1dee722dbfad7bbdcf68608d9c9bddc0cb367897ce9ecc0185f7ff1",
+				"dweb:/ipfs/Qmckp3mGWvBjQxeiGQAMQyeq3EK4tJmtMmj9EHZjzVXMQH"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/infrastructure/userInterfaces/IPChainVotePower.sol": {
+			"keccak256": "0x23e31ef2ab9227795930728dc240fbe59f31f1b05e595ee137acc1e5e6e8497e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aecec4b505b6ea3963e78b39a6131b4562b908c24cfea9a674559dde23af72fe",
+				"dweb:/ipfs/QmQmK8aAzcSYUCkvcZcXRNVybermZ6CEqjSXbS99gpytLa"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/token/interface/IICleanable.sol": {
+			"keccak256": "0x3ccc1532d642c3feff5b282a7c8901e2582844c1559acd1bd671afcb3aabaaef",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ff8edad3b7387bd54dbfa4975b51601d9a020fd1fb7baf1a9ce98888ff3cab6",
+				"dweb:/ipfs/QmdsSTUMZmkc898q5LqWFt3M3gy9yrbqReMJes78WngJc7"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/token/interface/IIGovernanceVotePower.sol": {
+			"keccak256": "0x5388cd6705f08a9d7a82be3d4c1aea3266df20eb5263b9f5ecf95e73338dc595",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8c7a9b55b0d6dd4d053d702f897ea5272695006ae0ca25f3b3a1ccbf4e604fd9",
+				"dweb:/ipfs/QmP1HtdwBY9ZJvDAQTEDZzCNBTrS2Rdk7QRy3An6PLMjd5"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/token/interface/IIVPContract.sol": {
+			"keccak256": "0x6eb8619a51e0e00a93b32055e4f43d64f050b129e31bf0e161584d79cfbc5dc7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ab5b8f39e1cb4f5a861e6468b4340ee57272d329488340fac71418e8c9936984",
+				"dweb:/ipfs/QmdKDZkCAEjMeL233hsFTvGLG6rZzn6XVNnopKLV2iz4g8"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/token/interface/IIVPToken.sol": {
+			"keccak256": "0x49a647d1e8c394320c337b09f14b0ca70f43b0a1327233ddd9b8dcf7f005f92e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb712e00e5801b8f1a1d2c05d4e46556bac15e227df7e21cd5c80ad1cc16192d",
+				"dweb:/ipfs/QmUAGmvn65u4R165gPMbNoJwVFicCtAC2Ce6Y3f8PpTbTw"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/userInterfaces/IVPContractEvents.sol": {
+			"keccak256": "0x651a2ff1d5c179b87259f564d02877ae496b236bd48f4813a4d815c25e2407cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b68d9f9bfeeffa03a6d3f6c14a2633759f3739486e06e3daf03be60c6f9bbce7",
+				"dweb:/ipfs/QmWJrZF5UYPXQaSKVeP4iJUZj4jhDqmmMopxU8K3KdvJe9"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/token/userInterfaces/IVPToken.sol": {
+			"keccak256": "0xf1c8aa57f9840fff577e24abc3d24b92717e77f73384f82b0f2446812d0497fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://387a5149f1be7496efb046038f88d9599e417128aa507a39869f2bd929d687b6",
+				"dweb:/ipfs/QmaEp9wagP6iw6qrGGwTceXzbfsXcmw1UkHzM7wyJoqve6"
+			]
+		},
+		"lib/flare-foundry-periphery-package/src/coston2/util-contracts/userInterfaces/IFlareContractRegistry.sol": {
+			"keccak256": "0x358aa3eced2172a3c252cd0c5efeb2572969ac6b64001f62facf185193668cea",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8627e9e0dca5664cc7f5c9db39a602bd17ae4a2d698a0fb13b274a9474804d31",
+				"dweb:/ipfs/QmRNVH3EaykbgjVntcCf2bHWyXWvoL4gEKkdMiXGJdjD2R"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
+				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"src/UnfuckGPTPriceData.sol": {
+			"keccak256": "0x2e46f21b79f5b5a163b16f1945e31f5c640540437ecc14a32a02ffef91e833cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://adb925437606058ddf3c8dbda147b2e642720e79a77bd5f4620ed634329a46b2",
+				"dweb:/ipfs/QmRPMRQmQ2LDhwwBoHCr7i3Mq2P8JFiEe7poDVR4ug4mGc"
+			]
+		}
+	},
+	"version": 1
+}

@@ -28,8 +28,9 @@
 		"remappings": [
 			"ds-test/=lib/forge-std/lib/ds-test/src/",
 			"forge-std/=lib/forge-std/src/",
-			"@openzeppelin/=lib/openzeppelin-contracts/",
-			"@flarenetwork/flare-periphery-contracts/=lib/flare-foundry-periphery-package/src/"
+			"openzeppelin-contracts/=lib/openzeppelin-contracts/",
+			"@flarenetwork/flare-periphery-contracts/=lib/flare-foundry-periphery-package/src/",
+			"wormhole-solidity-sdk/=lib/wormhole-solidity-sdk/src/"
 		]
 	}
 }

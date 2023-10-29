@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 import "@flarenetwork/flare-periphery-contracts/coston2/util-contracts/userInterfaces/IFlareContractRegistry.sol";
 import "@flarenetwork/flare-periphery-contracts/coston2/ftso/userInterfaces/IFtsoRegistry.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
 
 /* 
 Supported symbols: 
@@ -16,9 +16,11 @@ contract UnfuckGPTPriceData is Ownable {
     IFlareContractRegistry contractRegistry =
         IFlareContractRegistry(FLARE_CONTRACT_REGISTRY);
 
-    IFtsoRegistry.PriceInfo[] public currentPriceInfo;
+    mapping(uint256 => IFtsoRegistry.PriceInfo) public currentPriceInfo;
 
-    constructor() Ownable(msg.sender) {}
+    uint256 public priceInfosCount;
+
+    constructor() {}
 
     function refreshPrices() external onlyOwner {
         IFtsoRegistry ftsoRegistry = IFtsoRegistry(
@@ -28,13 +30,11 @@ contract UnfuckGPTPriceData is Ownable {
         IFtsoRegistry.PriceInfo[] memory _priceInfos = ftsoRegistry
             .getAllCurrentPrices();
 
-        for (uint256 i = 0; i < _priceInfos.length; i++) {
-            currentPriceInfo[i] = _priceInfos[i];
-        }
-    }
+        priceInfosCount = _priceInfos.length;
 
-    function priceInfosLength() external view returns (uint256) {
-        return currentPriceInfo.length;
+        for (uint256 i = 0; i < _priceInfos.length; i++) {
+            currentPriceInfo[_priceInfos[i].ftsoIndex] = _priceInfos[i];
+        }
     }
 
     function latestPriceForToken(

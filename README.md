@@ -1,0 +1,5 @@
+### Contract addresses:
+Unfuck GPT on Polygon Mumbai: 0x1A15D0999dF20646e0173f98F82179Ab2b07b0a2
+Unfuck NFT on BSC: 0xA4DB654a9CB3301eE92e4540a738177E82f34195
+
+Unfuck GPT Price Data on Coston2 Flare testnet: 0xA13688C788AdCa35348F9bFF89Cf882A217D56f0

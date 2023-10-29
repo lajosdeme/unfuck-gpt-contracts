@@ -1,3 +1,4 @@
-@openzeppelin/=lib/openzeppelin-contracts/
+openzeppelin-contracts/=lib/openzeppelin-contracts/
 forge-std/=lib/forge-std/
 @flarenetwork/flare-periphery-contracts/=lib/flare-foundry-periphery-package/src/
+wormhole-solidity-sdk/=lib/wormhole-solidity-sdk/src/
